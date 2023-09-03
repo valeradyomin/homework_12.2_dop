@@ -10,6 +10,9 @@ packages = [{include = "homework_12"}]
 python = "^3.10"
 
 
+[tool.poetry.group.develop.dependencies]
+pytest-cov = "^4.1.0"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
