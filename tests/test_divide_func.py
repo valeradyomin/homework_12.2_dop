@@ -9,6 +9,8 @@ def test_divide_nums_good(a, b, expected_result):
     assert divide_nums(a, b) == expected_result
 
 
-def test_divide_nums_errors():
-    with pytest.raises(ZeroDivisionError):
-        divide_nums(7, 0)
+@pytest.mark.parametrize("exception, number, zero", [(ZeroDivisionError, 7, 0),
+                                                     (TypeError, "32", 0)])
+def test_divide_nums_errors(exception, number, zero):
+    with pytest.raises(exception):
+        divide_nums(number, zero)
